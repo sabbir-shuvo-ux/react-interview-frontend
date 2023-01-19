@@ -1,13 +1,187 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* =========================== layout ========================= */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* basic style */
+
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.d-none {
+  display: none;
+}
+
+header {
+  background: #fff;
+}
+
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* ====================== homepage ========================= */
+.home {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.user-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px 1rem;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.user-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+
+.user-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.options {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.options span {
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+  margin-left: 8px;
+  display: inline-flex;
+}
+
+.block {
+  color: var(--error);
+  border: 1px solid var(--error);
+  border-radius: 10px;
+  padding: 0.2rem 0.5rem;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+.active {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  padding: 0.2rem 0.5rem;
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+/* ====================== form =================== */
+
+.create {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 300px;
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.form-back-shadow {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+label,
+input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  background-color: var(--error);
+  transform: scale(1.1);
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+@media (max-width: 991.98px) {
+  .home {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .home {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
